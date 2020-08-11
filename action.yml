@@ -1,6 +1,6 @@
 # action.yml
-name: "Multiple Algorithm Caller"
-description: "An opportunity for your algorithms to report back their problems as issues on Github"
+name: "Algorithmia - Multiple Algorithm Caller"
+description: "Call multiple algorithms on Algorithmia in parallel and collect the results"
 branding:
   icon: "alert-circle"
   color: "yellow"
@@ -8,24 +8,16 @@ inputs:
   api_key:
     description: "Algorithmia API key"
     required: true
-  path:
-    description: 'Directory name for the local project stored in /github/workspace due to an "actions/checkout" command'
+  parallel_algo_names:
+    description: "Algorithm names to call in parallel, as a list of strings"
     required: true
-  metric:
-    description: "TBU"
-    required: true
-  threshold:
-    description: "TBU"
-    required: true
-  checkpoints:
-    description: "TBU"
+  parallel_algo_input:
+    description: "Algorithm input to for multiple execution, as a list of strings"
     required: true
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
     - ${{ inputs.api_key }}
-    - ${{ inputs.path }}
-    - ${{ inputs.metric }}
-    - ${{ inputs.threshold }}
-    - ${{ inputs.checkpoints }}
+    - ${{ inputs.parallel_algo_names }}
+    - ${{ inputs.parallel_algo_input }}
