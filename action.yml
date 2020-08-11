@@ -8,7 +8,7 @@ inputs:
   api_key:
     description: "Algorithmia API key"
     required: true
-  orchestrator_algo_path: "Orchestrator algorithm path (e.g. asli/EchoText/0.1.0) to call specified multiple algorithms in parallel"
+  orchestrator_algo_path: "Orchestrator algorithm path to call specified multiple algorithms in parallel"
     required: true
   parallel_algo_names:
     description: "Algorithm names to call in parallel, as a list of strings"
