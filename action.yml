@@ -1,0 +1,21 @@
+# action.yml
+name: "Algorithmia Multi Model Caller"
+description: "Call multiple models and report back the results"
+branding:
+  icon: "alert-circle"
+  color: "yellow"
+inputs:
+  api_key:
+    description: "Algorithmia API key"
+    required: true
+  parallel_algo_names: "Names of the algorithms to be called in parallel, as a list of strings"
+    required: true
+  parallel_algo_input: "Input to be passed to these algorithms, as a list of strings"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.api_key }}
+    - ${{ inputs.parallel_algo_names }}
+    - ${{ inputs.parallel_algo_input }}
