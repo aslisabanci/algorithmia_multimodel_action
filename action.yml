@@ -1,5 +1,5 @@
 # action.yml
-name: "Algorithmia-MultiModel Caller"
+name: "Multiple Algorithm Caller"
 description: "Call multiple models and report back the results"
 branding:
   icon: "alert-circle"
